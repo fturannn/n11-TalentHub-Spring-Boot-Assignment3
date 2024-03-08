@@ -15,7 +15,7 @@ public class CityService {
 
     public CityService() {
         cities = new ArrayList<>();
-        loadCitiesFromCSV("World_Cities_Location_table.csv"); // CSV dosyasını yükle
+        loadCitiesFromCSV("World_Cities_Location_table.csv");
     }
 
     private void loadCitiesFromCSV(String filename) {
@@ -25,7 +25,7 @@ public class CityService {
                 String[] parts = line.split(";");
                 if (parts.length != 6) {
                     System.err.println("Geçersiz veri satırı: " + line);
-                    continue; // Geçersiz satırı atla ve bir sonrakine geç
+                    continue;
                 }
                 City city = new City();
                 city.setId(Long.parseLong(parts[0].replace("\"", "").trim()));
